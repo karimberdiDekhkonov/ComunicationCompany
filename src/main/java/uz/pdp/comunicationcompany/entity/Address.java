@@ -4,23 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.UUID;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-public class SimCards {
+public class Address {
+
     @Id
     @GeneratedValue
     private UUID id;
 
-    private boolean active;
+    private String city;
 
-    @Column(unique = true)
-    private String number;
-
-    @ManyToOne
-    private User user;
+    private String street;
 }

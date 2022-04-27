@@ -3,24 +3,29 @@ package uz.pdp.comunicationcompany.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import uz.pdp.comunicationcompany.entity.enums.RoleEnum;
+import uz.pdp.comunicationcompany.entity.enums.UserType;
 
 import javax.persistence.*;
 import java.util.UUID;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Role {
+@Data
+public class Users {
     @Id
     @GeneratedValue
     private UUID id;
 
-    @Enumerated(value = EnumType.STRING)
-    private RoleEnum roleEnum;
+    private String fullName;
 
-    public String getAuthority(){
-        return roleEnum.name();
-    }
-}
+    @Enumerated(value = EnumType.STRING)
+    private UserType userType;
+
+    private String email;
+
+    private String password;
+
+    @OneToOne
+    private Address address;
+ }

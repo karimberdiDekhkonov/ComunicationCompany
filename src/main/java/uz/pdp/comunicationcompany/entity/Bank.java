@@ -13,12 +13,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Data
-public class USSDCode {
+public class Bank {
     @Id
     @GeneratedValue
     private UUID id;
 
-    private boolean active;
-
-    private String code;
+    private String name;
 }

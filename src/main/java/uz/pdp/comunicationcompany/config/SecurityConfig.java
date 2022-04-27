@@ -13,10 +13,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors().and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/tariff",
-                        "/api/ussdCodes",
-                        "/api/simCard").hasAnyRole("USER","MANAGER","DIRECTOR")
-                .antMatchers("/api").hasAnyRole("MANAGER","DIRECTOR")
+                .antMatchers("/api/card").hasAnyRole("USER","MANAGER","DIRECTOR")
+                .antMatchers("/api/bankamat").hasAnyRole("MANAGER","DIRECTOR")
+                .antMatchers("/api").hasRole("DIRECTOR")
                 .anyRequest()
                 .authenticated();
     }

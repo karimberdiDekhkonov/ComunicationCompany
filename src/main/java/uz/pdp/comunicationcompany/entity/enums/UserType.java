@@ -1,8 +1,6 @@
 package uz.pdp.comunicationcompany.entity.enums;
 
-public enum RoleEnum {
+public enum UserType {
     DIRECTOR,
-    MANAGER,
-    STAFF,
-    USER
+    MANAGER
 }
